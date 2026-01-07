@@ -1,0 +1,167 @@
+/* ==========================================================================
+   THEME: Zeballos & Diaz - Estudio Juridico
+   Paleta: Dorado (#C9B086), Negro (#151515), Blanco (#FFFFFF)
+   Tipografia: Playfair Display (titulos) + Inter (cuerpo)
+   ========================================================================== */
+
+/* Headings con Playfair Display - Serif elegante */
+.wb-stl-heading1,
+.wb-stl-heading1 a,
+.wb-stl-heading1 a:hover {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.wb-stl-heading2,
+.wb-stl-heading2 a,
+.wb-stl-heading2 a:hover {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.wb-stl-heading3,
+.wb-stl-heading3 a,
+.wb-stl-heading3 a:hover {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.wb-stl-pagetitle,
+.wb-stl-pagetitle a,
+.wb-stl-pagetitle a:hover {
+  font-family: 'Playfair Display', Georgia, serif;
+  letter-spacing: 0.02em;
+}
+
+.wb-stl-subtitle,
+.wb-stl-subtitle a,
+.wb-stl-subtitle a:hover {
+  font-family: 'Playfair Display', Georgia, serif;
+  letter-spacing: 0.05em;
+}
+
+/* Mejoras de legibilidad en textos de cuerpo */
+.wb-stl-normal,
+.wb-stl-normal a {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+/* Mejoras en enlaces - hover con dorado */
+a:hover {
+  color: #C9B086;
+  transition: color 0.2s ease;
+}
+
+/* Footer links con transicion suave */
+.wb-stl-footer a:hover {
+  color: #D4C4A0;
+  transition: color 0.2s ease;
+}
+
+/* Lineas divisorias con dorado sutil */
+hr,
+.wb-elm-line {
+  border-color: rgba(201, 176, 134, 0.3);
+}
+
+/* ==========================================================================
+   HEADER - Negro puro elegante
+   ========================================================================== */
+
+/* Fondo del header - Negro puro */
+[id^="wb_header"] > .wb_content {
+  background: #000000 !important;
+}
+
+/* Menu container - Logo izquierda, menu derecha */
+#wb_element_instance2535_0 > .wb_content {
+  justify-content: space-between !important;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Menu desplegable - Negro puro */
+#wb_element_instance2536_0 ul,
+#wb_element_instance2536_0 ul ul,
+[class*="wb-menu"] ul {
+  background: #000000 !important;
+}
+
+/* Boton hamburguesa - Negro puro */
+#wb_element_instance2536_0 .btn-collapser,
+#wb_element_instance2536_0 .btn-collapser:hover {
+  background-color: #000000 !important;
+}
+
+/* Links del menu - Blanco con hover dorado */
+.hmenu > li > a {
+  color: #ffffff !important;
+  transition: color 0.2s ease;
+}
+
+.hmenu > li > a:hover,
+.hmenu > li.wb_this_page_menu_item > a {
+  color: #C9B086 !important;
+}
+
+/* Linea dorada sutil bajo el header */
+[id^="wb_header"] > .wb_content::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #C9B086, transparent);
+}
+
+/* ==========================================================================
+   FOOTER - Negro puro y compacto
+   ========================================================================== */
+
+/* Fondo del footer - Negro puro */
+[id^="wb_footer"] > .wb_content {
+  background: #000000 !important;
+  padding: 30px 20px !important;
+}
+
+/* Reducir padding interno del footer */
+#wb_element_instance2538_0 > .wb_content,
+#wb_element_instance2539_0 > .wb_content,
+#wb_element_instance2540_0 > .wb_content,
+#wb_element_instance2543_0 > .wb_content {
+  padding: 10px 0 !important;
+}
+
+/* Footer más compacto - reducir altura de secciones */
+[id^="wb_footer"] .wb-layout-element {
+  min-height: auto !important;
+}
+
+/* Linea dorada sutil sobre el footer */
+[id^="wb_footer"] > .wb_content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9B086, transparent);
+}
+
+/* ==========================================================================
+   HEADER STICKY (preparación para Single Page)
+   ========================================================================== */
+
+/* Header fijo en la parte superior */
+[id^="wb_header"] {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Compensar espacio del header fijo */
+#wb_root > .wb_content > [id^="wb_main"] {
+  padding-top: 60px;
+}

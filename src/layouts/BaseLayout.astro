@@ -1,0 +1,36 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  pageStylesheet?: string;
+}
+
+const { title, description, keywords, pageStylesheet } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | Zeballos & Díaz Abogados</title>
+  {description && <meta name="description" content={description} />}
+  {keywords && <meta name="keywords" content={keywords} />}
+  <meta name="author" content="Estudio Jurídico Zeballos & Díaz" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link href="/css/font-awesome/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Page Stylesheet -->
+  {pageStylesheet && <link href={`/css/${pageStylesheet}`} rel="stylesheet" />}
+</head>
+<body>
+  <slot />
+</body>
+</html>

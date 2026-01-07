@@ -1,0 +1,367 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Abogados en Santiago"
+  description="Estudio jurídico en San Miguel, Santiago. Especialistas en derecho penal, Ley 20.000, derecho civil y familia. Consulta gratuita +56 9 5644 4418"
+  keywords="abogados Santiago, derecho penal Chile, abogado Ley 20000, derecho civil, derecho familia"
+  pageStylesheet="single-page.css"
+>
+  <!-- HEADER -->
+  <header id="header" class="header">
+    <div class="header-container">
+      <a href="#hero" class="logo">
+        <img src="/gallery/logo-zyd.svg" alt="Zeballos & Díaz" class="logo-img" />
+      </a>
+      <nav class="nav">
+        <a href="#hero" class="nav-link">INICIO</a>
+        <a href="#nosotros" class="nav-link">NOSOTROS</a>
+        <a href="#servicios" class="nav-link">SERVICIOS</a>
+        <a href="#contacto" class="nav-link">CONTACTO</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-overlay"></div>
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="/gallery/11-ts1750899191.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-content">
+      <img src="/gallery/logo-zyd.svg" alt="Zeballos & Díaz" class="hero-logo" />
+      <h1 class="hero-title">Estudio Jurídico</h1>
+      <p class="hero-tagline">Tradición, eficiencia y eficacia</p>
+      <div class="trust-signals">
+        <div class="trust-item">
+          <i class="fa fa-university"></i>
+          <span>Universidad de Chile</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa fa-shield"></i>
+          <span>Ex Consejo Defensa del Estado</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa fa-lock"></i>
+          <span>100% Confidencial</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="nosotros" class="section section-light">
+    <div class="container">
+      <h2 class="section-title">Sobre Nosotros</h2>
+      <p class="section-subtitle">Experiencia y compromiso con nuestros clientes</p>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            El Estudio Jurídico <strong>Zeballos & Díaz</strong> fue fundado con el propósito de brindar
+            asesoría legal integral y de excelencia. Nuestro equipo está liderado por abogados egresados
+            de la <strong>Universidad de Chile</strong>, con amplia experiencia en diversas áreas del derecho.
+          </p>
+          <p>
+            Destacamos por nuestra experiencia en el <strong>Consejo de Defensa del Estado</strong>,
+            lo que nos permite ofrecer una perspectiva única en la defensa de los intereses de nuestros clientes.
+          </p>
+          <p>
+            Nos comprometemos a entregar un servicio <strong>personalizado, confidencial y eficiente</strong>,
+            adaptándonos a las necesidades específicas de cada caso.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Años de Experiencia</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Casos Atendidos</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Clientes Satisfechos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section section-dark">
+    <div class="container">
+      <h2 class="section-title light">Áreas de Práctica</h2>
+      <p class="section-subtitle light">Soluciones legales integrales para su tranquilidad</p>
+
+      <div class="services-grid">
+        <!-- Derecho Penal -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fa fa-gavel"></i>
+          </div>
+          <h3 class="service-title"><a href="/derecho-penal.html">Derecho Penal</a></h3>
+          <ul class="service-list">
+            <li><a href="/defensa-penal-investigaciones.html">Defensa en Investigaciones</a></li>
+            <li><a href="/defensa-penal-juicios.html">Defensa en Juicios</a></li>
+            <li><a href="/delitos-economicos.html">Delitos económicos y de violencia</a></li>
+            <li><a href="/ley-20000.html">Infracción Ley 20.000</a></li>
+          </ul>
+          <a href="/derecho-penal.html" class="service-link">Ver más <i class="fa fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Derecho de Familia -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fa fa-users"></i>
+          </div>
+          <h3 class="service-title"><a href="/derecho-familia.html">Derecho de Familia</a></h3>
+          <ul class="service-list">
+            <li><a href="/divorcios-chile.html">Divorcios</a></li>
+            <li><a href="/tuicion-custodia.html">Tuición y custodia</a></li>
+            <li><a href="/pension-alimentos.html">Pensión de alimentos</a></li>
+            <li><a href="/adopcion-chile.html">Adopción</a></li>
+          </ul>
+          <a href="/derecho-familia.html" class="service-link">Ver más <i class="fa fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Derecho Tributario -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fa fa-calculator"></i>
+          </div>
+          <h3 class="service-title"><a href="/derecho-tributario.html">Derecho Tributario</a></h3>
+          <ul class="service-list">
+            <li><a href="/defensa-sii.html">Defensa ante SII y TGR</a></li>
+            <li><a href="/reclamaciones-tributarias.html">Reclamaciones administrativas</a></li>
+            <li><a href="/regularizacion-tributaria.html">Regularización tributaria</a></li>
+            <li><a href="/asesoria-tributaria-empresas.html">Asesoría empresarial</a></li>
+          </ul>
+          <a href="/derecho-tributario.html" class="service-link">Ver más <i class="fa fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Derecho Laboral -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fa fa-briefcase"></i>
+          </div>
+          <h3 class="service-title"><a href="/derecho-laboral.html">Derecho Laboral</a></h3>
+          <ul class="service-list">
+            <li><a href="/despido-injustificado.html">Despidos injustificados</a></li>
+            <li><a href="/conflictos-laborales.html">Prevención de conflictos</a></li>
+            <li><a href="/cumplimiento-laboral.html">Asesoría en cumplimiento</a></li>
+            <li><a href="/negociacion-colectiva.html">Negociaciones colectivas</a></li>
+          </ul>
+          <a href="/derecho-laboral.html" class="service-link">Ver más <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section section-light">
+    <div class="container">
+      <h2 class="section-title">Contacto</h2>
+      <p class="section-subtitle">Estamos aquí para ayudarte</p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <!-- Mapa de Google Maps -->
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps?q=Berlin+1000,+San+Miguel,+Santiago,+Chile&output=embed"
+              width="100%"
+              height="200"
+              style="border:0; border-radius: 8px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa fa-map-marker"></i>
+            <div>
+              <strong>Dirección</strong>
+              <p>Berlín #1.000<br>San Miguel, Santiago<br>Región Metropolitana</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa fa-phone"></i>
+            <div>
+              <strong>Teléfono</strong>
+              <p><a href="tel:+56956444418">+56 9 5644 4418</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:contacto@zydlegal.cl">contacto@zydlegal.cl</a></p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" action="/api/contact.php" method="POST">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Su nombre completo" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+56 9 XXXX XXXX" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="correo@ejemplo.cl" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="tipo">Tipo de Consulta</label>
+            <select id="tipo" name="tipo" required>
+              <option value="">Seleccione una opción</option>
+              <option value="penal">Derecho Penal / Ley 20.000</option>
+              <option value="familia">Derecho de Familia</option>
+              <option value="tributario">Derecho Tributario</option>
+              <option value="laboral">Derecho Laboral</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describa brevemente su situación..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Enviar Consulta</button>
+          <div id="formMessage" class="form-message" style="display: none;"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="footer-logo">Z&D LEGAL</span>
+        <p>&copy; 2025 zydlegal.cl</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/56956444418?text=Hola,%20necesito%20una%20consulta%20legal" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+    <i class="fa fa-whatsapp"></i>
+  </a>
+
+</BaseLayout>
+
+<script>
+  // Header shrink on scroll + active nav link
+  const header = document.getElementById('header');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section[id]');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    // Header shrink
+    if (currentScroll > 100) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+
+    // Active nav link based on scroll position
+    let currentSection = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - header.offsetHeight - 100;
+      if (currentScroll >= sectionTop) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active');
+      }
+    });
+
+    lastScroll = currentScroll;
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const headerHeight = header.offsetHeight;
+        const targetPosition = target.offsetTop - headerHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+
+  menuToggle?.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+  });
+
+  // Contact form submission
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formMessage = document.getElementById('formMessage');
+
+  contactForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Disable button and show loading
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+    formMessage.style.display = 'none';
+
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch('/api/contact.php', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      formMessage.style.display = 'block';
+
+      if (result.success) {
+        formMessage.className = 'form-message success';
+        formMessage.textContent = result.message;
+        contactForm.reset();
+      } else {
+        formMessage.className = 'form-message error';
+        formMessage.textContent = result.message;
+      }
+    } catch (error) {
+      formMessage.style.display = 'block';
+      formMessage.className = 'form-message error';
+      formMessage.textContent = 'Error de conexión. Por favor intente nuevamente.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar Consulta';
+    }
+  });
+</script>
