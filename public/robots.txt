@@ -1,3 +1,28 @@
+# Robots.txt para zydlegal.cl
+# Estudio Jurídico Zeballos & Díaz
+
 User-agent: *
 Allow: /
-Sitemap: https://www.zydlegal.cl/sitemap.xml
+
+# Sitemap
+Sitemap: https://zydlegal.cl/sitemap.xml
+
+# Bloquear carpetas innecesarias
+Disallow: /api/
+Disallow: /cgi-bin/
+Disallow: /*.php$
+
+# Permitir archivos importantes
+Allow: /gallery/
+Allow: /css/
+Allow: /js/
+
+# Directivas para Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Directivas para Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

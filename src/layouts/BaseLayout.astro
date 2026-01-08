@@ -4,9 +4,145 @@ export interface Props {
   description?: string;
   keywords?: string;
   pageStylesheet?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
 }
 
-const { title, description, keywords, pageStylesheet } = Astro.props;
+const {
+  title,
+  description = "Estudio jurídico en San Miguel, Santiago. Especialistas en derecho penal, Ley 20.000, derecho civil y familia. Consulta gratuita +56 9 5644 4418",
+  keywords = "abogados Santiago, derecho penal Chile, abogado Ley 20000, derecho civil, derecho familia, estudio jurídico San Miguel",
+  pageStylesheet,
+  canonical,
+  ogImage = "/gallery/og-image.jpg",
+  ogType = "website",
+  noindex = false
+} = Astro.props;
+
+const siteUrl = "https://zydlegal.cl";
+const canonicalUrl = canonical ? `${siteUrl}${canonical}` : Astro.url.href;
+const fullTitle = `${title} | Zeballos & Díaz Abogados`;
+
+// Schema.org JSON-LD estructurado
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LegalService",
+      "@id": `${siteUrl}/#organization`,
+      "name": "Zeballos & Díaz Abogados",
+      "alternateName": "Z&D Legal",
+      "url": siteUrl,
+      "logo": `${siteUrl}/gallery/logo-zyd.svg`,
+      "image": `${siteUrl}/gallery/og-image.jpg`,
+      "description": description,
+      "telephone": "+56956444418",
+      "email": "contacto@zydlegal.cl",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Berlín #1.000",
+        "addressLocality": "San Miguel",
+        "addressRegion": "Región Metropolitana",
+        "postalCode": "",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.4969,
+        "longitude": -70.6483
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "City",
+        "name": "Santiago"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios Legales",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Derecho Penal",
+              "description": "Defensa penal en investigaciones, juicios y delitos económicos"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ley 20.000",
+              "description": "Defensa especializada en infracciones a la Ley 20.000 de drogas"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Derecho de Familia",
+              "description": "Divorcios, tuición, custodia, pensión de alimentos y adopción"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Derecho Tributario",
+              "description": "Defensa ante SII, reclamaciones y regularización tributaria"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Derecho Laboral",
+              "description": "Despidos injustificados, conflictos laborales y negociaciones colectivas"
+            }
+          }
+        ]
+      },
+      "sameAs": [
+        "https://wa.me/56956444418"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "Zeballos & Díaz Abogados",
+      "description": description,
+      "publisher": {
+        "@id": `${siteUrl}/#organization`
+      },
+      "inLanguage": "es-CL"
+    },
+    {
+      "@type": "WebPage",
+      "@id": canonicalUrl,
+      "url": canonicalUrl,
+      "name": fullTitle,
+      "isPartOf": {
+        "@id": `${siteUrl}/#website`
+      },
+      "about": {
+        "@id": `${siteUrl}/#organization`
+      },
+      "description": description,
+      "inLanguage": "es-CL"
+    }
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -14,11 +150,58 @@ const { title, description, keywords, pageStylesheet } = Astro.props;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title} | Zeballos & Díaz Abogados</title>
-  {description && <meta name="description" content={description} />}
-  {keywords && <meta name="keywords" content={keywords} />}
+
+  <!-- Título y descripción -->
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
   <meta name="author" content="Estudio Jurídico Zeballos & Díaz" />
+
+  <!-- Robots -->
+  {noindex ? (
+    <meta name="robots" content="noindex, nofollow" />
+  ) : (
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  )}
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Zeballos & Díaz Abogados" />
+  <meta property="og:locale" content="es_CL" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonicalUrl} />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+  <!-- Geo tags para SEO local -->
+  <meta name="geo.region" content="CL-RM" />
+  <meta name="geo.placename" content="San Miguel, Santiago" />
+  <meta name="geo.position" content="-33.4969;-70.6483" />
+  <meta name="ICBM" content="-33.4969, -70.6483" />
+
+  <!-- Información de contacto -->
+  <meta name="contact" content="contacto@zydlegal.cl" />
+  <meta name="reply-to" content="contacto@zydlegal.cl" />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- Preconnect para performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -29,6 +212,9 @@ const { title, description, keywords, pageStylesheet } = Astro.props;
 
   <!-- Page Stylesheet -->
   {pageStylesheet && <link href={`/css/${pageStylesheet}`} rel="stylesheet" />}
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
 </head>
 <body>
   <slot />
