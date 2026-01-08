@@ -101,6 +101,7 @@
 		href="https://fonts.googleapis.com/css?family=Inter:400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin,latin-ext,vietnamese"
 		rel="stylesheet" type="text/css" />
 	<link href="css/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="/css/header.css" rel="stylesheet" type="text/css" />
 	<link href="css/5.css?ts=20250626151620" rel="stylesheet" type="text/css" id="wb-page-stylesheet" />
 
 	<style>
@@ -288,26 +289,44 @@
 		<div class="wb_sbg"></div>
 
 		<!-- Header -->
-		<div id="wb_header_5" class="wb_element wb-layout-element" data-plugin="LayoutElement">
-			<div class="wb_content wb-layout-vertical">
-				<div id="wb_element_instance2535_0"
-					class="wb_element wb-anim-entry wb-anim wb-anim-fade-in-none wb-layout-element"
-					data-plugin="LayoutElement" data-wb-anim-entry-time="0.6" data-wb-anim-entry-delay="0">
-					<div class="wb_content wb-layout-horizontal">
-						<div id="wb_element_instance2536_0"
-							class="wb_element wb-menu wb-prevent-layout-click wb-menu-mobile" data-plugin="Menu">
-							<a class="btn btn-default btn-collapser"><span class="icon-bar"></span><span
-									class="icon-bar"></span><span class="icon-bar"></span></a>
-							<ul class="hmenu" dir="ltr">
-								<li><a href="/">Inicio</a></li>
-								<li><a href="/#nosotros">Sobre Nosotros</a></li>
-								<li><a href="/#servicios">Servicios</a></li>
-								<li><a href="/#contacto">Contacto</a></li>
-							</ul>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
+<header id="header" class="header">
+  <div class="header-container">
+    <a href="/" class="logo">
+      <img src="/gallery/logo-zyd.svg" alt="Zeballos y Díaz" class="logo-img" width="80" height="80" />
+    </a>
+    <nav class="nav">
+      <a href="/" class="nav-link">INICIO</a>
+      <a href="/#nosotros" class="nav-link">NOSOTROS</a>
+      <a href="/#servicios" class="nav-link">SERVICIOS</a>
+      <a href="/#contacto" class="nav-link">CONTACTO</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<script>
+  // Header scroll effect
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    nav.classList.toggle('active');
+  });
+</script>
 			</div>
 		</div>
 

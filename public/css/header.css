@@ -1,0 +1,163 @@
+/* Header Styles - Zeballos y Díaz */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 176, 134, 0.3), transparent);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 80px;
+  width: auto;
+  transition: height 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #C9B086;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #C9B086;
+}
+
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header.scrolled .header-container {
+  padding: 10px 20px;
+}
+
+.header.scrolled .logo-img {
+  height: 60px;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 110px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.98);
+    flex-direction: column;
+    padding: 20px;
+    gap: 0;
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav.active {
+    transform: translateY(0);
+  }
+
+  .header.scrolled .nav {
+    top: 80px;
+  }
+
+  .nav-link {
+    padding: 15px 0;
+    border-bottom: 1px solid #222;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+/* Spacing for fixed header */
+body {
+  padding-top: 110px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 100px;
+  }
+}
